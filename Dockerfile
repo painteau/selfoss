@@ -32,10 +32,9 @@ RUN apk upgrade --no-cache \
     php8-zlib \
     s6 \
     su-exec \
-    tini \
+    tini
 
 COPY ./selfoss /selfoss
-
 COPY --link rootfs /
 RUN chmod +x /usr/local/bin/run.sh /services/*/run /services/.s6-svscan/*
 
