@@ -11,7 +11,7 @@ RUN apk add ca-certificates
 RUN apk add libwebp 
 RUN apk add musl 
 RUN apk add nginx 
-RUN apk add php8 
+RUN apk add php
 RUN apk add php8-ctype 
 RUN apk add php8-curl 
 RUN apk add php8-dom 
