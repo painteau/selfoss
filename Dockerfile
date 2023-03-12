@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM alpine:edge
+FROM alpine:3.16.4
 
 ARG VERSION=2.19
 
@@ -11,25 +11,25 @@ RUN apk add ca-certificates
 RUN apk add libwebp 
 RUN apk add musl 
 RUN apk add nginx 
-RUN apk add php
-RUN apk add php-ctype 
-RUN apk add php-curl 
-RUN apk add php-dom 
-RUN apk add php-fpm 
-RUN apk add php-gd 
-RUN apk add php-iconv
-RUN apk add php-json 
-RUN apk add php-mbstring 
-RUN apk add php-pdo_mysql 
-RUN apk add php-pdo_pgsql 
-RUN apk add php-pdo_sqlite 
-RUN apk add php-pecl-imagick 
-RUN apk add php-session 
-RUN apk add php-simplexml 
-RUN apk add php-tidy 
-RUN apk add php-xml 
-RUN apk add php-xmlwriter 
-RUN apk add php-zlib 
+RUN apk add php8 
+RUN apk add php8-ctype 
+RUN apk add php8-curl 
+RUN apk add php8-dom 
+RUN apk add php8-fpm 
+RUN apk add php8-gd 
+RUN apk add php8-iconv
+RUN apk add php8-json 
+RUN apk add php8-mbstring 
+RUN apk add php8-pdo_mysql 
+RUN apk add php8-pdo_pgsql 
+RUN apk add php8-pdo_sqlite 
+RUN apk add php8-pecl-imagick 
+RUN apk add php8-session 
+RUN apk add php8-simplexml 
+RUN apk add php8-tidy 
+RUN apk add php8-xml 
+RUN apk add php8-xmlwriter 
+RUN apk add php8-zlib 
 RUN apk add s6 
 RUN apk add su-exec 
 RUN apk add tini
