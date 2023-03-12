@@ -34,10 +34,8 @@ RUN apk upgrade --no-cache \
     s6 \
     su-exec \
     tini \
- && wget -q https://github.com/fossar/selfoss/releases/download/${VERSION}/selfoss-${VERSION}.zip -P /tmp \
- && CHECKSUM=$(sha256sum /tmp/selfoss-$VERSION.zip | awk '{print $1}') \
- && if [ "${CHECKSUM}" != "${SHA256_HASH}" ]; then echo "Warning! Checksum does not match!" && exit 1; fi \
- && mkdir /selfoss && unzip -q /tmp/selfoss-$VERSION.zip -d / \
+ && wget -q https://github.com/fossar/selfoss/releases/download/2.19/selfoss-2.19.zip -P /tmp \
+ && mkdir /selfoss && unzip -q /tmp/selfoss-2.19.zip -d / \
  && rm -rf /tmp/*
 
 COPY --link rootfs /
