@@ -2,7 +2,6 @@
 FROM alpine:latest
 
 ARG VERSION=2.19
-ARG SHA256_HASH="E49C4750E9723277963CA699B602F09F9148E2B9F258FCE6B14429498AF0E4FC"
 
 ENV GID=991 UID=991 CRON_PERIOD=15m UPLOAD_MAX_SIZE=25M LOG_TO_STDOUT=false MEMORY_LIMIT=128M
 
@@ -34,9 +33,8 @@ RUN apk upgrade --no-cache \
     s6 \
     su-exec \
     tini \
- && wget -q https://github.com/fossar/selfoss/releases/download/2.19/selfoss-2.19.zip -P /tmp \
- && mkdir /selfoss && unzip -q /tmp/selfoss-2.19.zip -d / \
- && rm -rf /tmp/*
+
+COPY ./selfoss /selfoss
 
 COPY --link rootfs /
 RUN chmod +x /usr/local/bin/run.sh /services/*/run /services/.s6-svscan/*
