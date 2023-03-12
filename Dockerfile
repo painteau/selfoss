@@ -5,8 +5,8 @@ ARG VERSION=2.19
 
 ENV GID=991 UID=991 CRON_PERIOD=15m UPLOAD_MAX_SIZE=25M LOG_TO_STDOUT=false MEMORY_LIMIT=128M
 
-RUN apk --no-cache --update upgrade \
- && apk --no-cache add\
+RUN apk update && apk upgrade \
+    && apk add \
     ca-certificates \
     libwebp \
     musl \
