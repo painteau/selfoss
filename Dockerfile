@@ -5,34 +5,34 @@ ARG VERSION=2.19
 
 ENV GID=991 UID=991 CRON_PERIOD=15m UPLOAD_MAX_SIZE=25M LOG_TO_STDOUT=false MEMORY_LIMIT=128M
 
-RUN apk update && apk upgrade \
-    && apk add \
-    ca-certificates \
-    libwebp \
-    musl \
-    nginx \
-    php8 \
-    php8-ctype \
-    php8-curl \
-    php8-dom \
-    php8-fpm \
-    php8-gd \
-    php8-iconv \
-    php8-json \
-    php8-mbstring \
-    php8-pdo_mysql \
-    php8-pdo_pgsql \
-    php8-pdo_sqlite \
-    php8-pecl-imagick \
-    php8-session \
-    php8-simplexml \
-    php8-tidy \
-    php8-xml \
-    php8-xmlwriter \
-    php8-zlib \
-    s6 \
-    su-exec \
-    tini
+RUN apk update 
+RUN apk upgrade
+RUN apk add ca-certificates 
+RUN apk add libwebp 
+RUN apk add musl 
+RUN apk add nginx 
+RUN apk add php8 
+RUN apk add php8-ctype 
+RUN apk add php8-curl 
+RUN apk add php8-dom 
+RUN apk add php8-fpm 
+RUN apk add php8-gd 
+RUN apk add php8-iconv
+RUN apk add php8-json 
+RUN apk add php8-mbstring 
+RUN apk add php8-pdo_mysql 
+RUN apk add php8-pdo_pgsql 
+RUN apk add php8-pdo_sqlite 
+RUN apk add php8-pecl-imagick 
+RUN apk add php8-session 
+RUN apk add php8-simplexml 
+RUN apk add php8-tidy 
+RUN apk add php8-xml 
+RUN apk add php8-xmlwriter 
+RUN apk add php8-zlib 
+RUN apk add s6 
+RUN apk add su-exec 
+RUN apk add tini
 
 COPY ./selfoss /selfoss
 COPY --link rootfs /
