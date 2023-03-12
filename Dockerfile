@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM alpine:latest
+FROM alpine:edge
 
 ARG VERSION=2.19
 
