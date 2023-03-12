@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 ARG VERSION=2.19
-ARG SHA256_HASH="e49c4750e9723277963ca699b602f09f9148e2b9f258fce6b14429498af0e4fc"
+ARG SHA256_HASH="E49C4750E9723277963CA699B602F09F9148E2B9F258FCE6B14429498AF0E4FC"
 
 ENV GID=991 UID=991 CRON_PERIOD=15m UPLOAD_MAX_SIZE=25M LOG_TO_STDOUT=false MEMORY_LIMIT=128M
 
@@ -34,7 +34,7 @@ RUN apk upgrade --no-cache \
     s6 \
     su-exec \
     tini \
- && wget -q https://dl.cloudsmith.io/public/fossar/selfoss-git/raw/names/selfoss.zip/versions/${VERSION}/selfoss-${VERSION}.zip -P /tmp \
+ && wget -q https://github.com/fossar/selfoss/releases/download/${VERSION}/selfoss-${VERSION}.zip -P /tmp \
  && CHECKSUM=$(sha256sum /tmp/selfoss-$VERSION.zip | awk '{print $1}') \
  && if [ "${CHECKSUM}" != "${SHA256_HASH}" ]; then echo "Warning! Checksum does not match!" && exit 1; fi \
  && mkdir /selfoss && unzip -q /tmp/selfoss-$VERSION.zip -d / \
